@@ -22,7 +22,9 @@ In CPU experiment, the best result of Optuna and the result of retraining by `al
 On the other hand, in GPU, the results are different.
 
 - CPU results: https://github.com/himkt/optuna-allennlp-reproduction/blob/master/log.txt#L24-L56
+  - same metrics
 - GPU results: https://github.com/himkt/optuna-allennlp-reproduction/blob/master/log.txt#L70-L82
+  - different metrics
 
 This could be caused by the GPU non-deterministic computation.
 https://github.com/allenai/allennlp/issues/387
