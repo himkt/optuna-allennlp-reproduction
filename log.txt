@@ -1,0 +1,82 @@
+diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+62c62
+<     cuda_device: 0,
+---
+>     cuda_device: -1,
+diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+62c62
+<     cuda_device: 0,
+---
+>     cuda_device: -1,
+python3 ./allennlp_jsonnet_gpu.py
+Number of finished trials:  3
+Best trial:
+  Value:  0.51372
+  Params: 
+    DROPOUT: 0.185745663497891
+    EMBEDDING_DIM: 25
+    MAX_FILTER_SIZE: 4
+    NUM_FILTERS: 18
+    HIDDEN_SIZE: 31
+
+Created optimized AllenNLP config to `gpu/best_classifier.json`.
+allennlp train gpu/best_classifier.json -s gpu/best
+diff gpu/test_2/metrics.json gpu/best/metrics.json
+2,5c2,5
+<   "best_epoch": 3,
+<   "peak_cpu_memory_MB": 3848.228,
+<   "peak_gpu_0_memory_MB": 1234,
+<   "training_duration": "0:01:18.770117",
+---
+>   "best_epoch": 1,
+>   "peak_cpu_memory_MB": 3808.64,
+>   "peak_gpu_0_memory_MB": 1186,
+>   "training_duration": "0:00:51.303862",
+7,16c7,16
+<   "training_epochs": 4,
+<   "epoch": 4,
+<   "training_accuracy": 0.511,
+<   "training_loss": 29.37306941729784,
+<   "training_cpu_memory_MB": 3848.228,
+<   "training_gpu_0_memory_MB": 1234,
+<   "validation_accuracy": 0.51004,
+<   "validation_loss": 11.353218630552291,
+<   "best_validation_accuracy": 0.51372,
+<   "best_validation_loss": 29.564967146483063
+---
+>   "training_epochs": 2,
+>   "epoch": 2,
+>   "training_accuracy": 0.5074,
+>   "training_loss": 106.23504164880514,
+>   "training_cpu_memory_MB": 3808.324,
+>   "training_gpu_0_memory_MB": 1186,
+>   "validation_accuracy": 0.50164,
+>   "validation_loss": 17.337667718875036,
+>   "best_validation_accuracy": 0.50376,
+>   "best_validation_loss": 30.648082316533884
+python3 ./allennlp_jsonnet_cpu.py
+Number of finished trials:  3
+Best trial:
+  Value:  0.5156
+  Params: 
+    DROPOUT: 0.09998103395916497
+    EMBEDDING_DIM: 42
+    MAX_FILTER_SIZE: 6
+    NUM_FILTERS: 21
+    HIDDEN_SIZE: 21
+
+Created optimized AllenNLP config to `cpu/best_classifier.json`.
+allennlp train cpu/best_classifier.json -s cpu/best
+diff cpu/test_1/metrics.json cpu/best/metrics.json
+3c3
+<   "peak_cpu_memory_MB": 3976.88,
+---
+>   "peak_cpu_memory_MB": 3637.096,
+5c5
+<   "training_duration": "0:03:30.779900",
+---
+>   "training_duration": "0:03:24.830091",
+11c11
+<   "training_cpu_memory_MB": 3976.88,
+---
+>   "training_cpu_memory_MB": 3590.872,
