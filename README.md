@@ -3,6 +3,10 @@
 This repo is for investigating the problem of reproducing results.
 https://github.com/optuna/optuna/issues/1487
 
+Examples used in this repo are based on the Optuna official AllenNLP example.
+- script: https://github.com/optuna/optuna/blob/master/examples/allennlp/allennlp_jsonnet.py
+- configuration: https://github.com/optuna/optuna/blob/master/examples/allennlp/classifier.jsonnet
+
 
 #### Run experiment on your environment
 
