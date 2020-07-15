@@ -22,7 +22,7 @@ pip install -r ./requirements.txt
 #### Results
 
 I put the [running results](./log.txt).
-In CPU experiment, the best result of Optuna and the result of retraining by `allennlp train` produce the same.
+In CPU experiment, the best result of Optuna and the result of retraining by `allennlp train` are the same.
 On the other hand, in GPU, the results are different.
 
 - CPU results: https://github.com/himkt/optuna-allennlp-reproduction/blob/master/log.txt#L24-L56
