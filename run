@@ -1,0 +1,27 @@
+#!/bin/bash
+
+rm -rf gpu cpu
+
+echo diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+
+echo diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
+
+echo python3 ./allennlp_jsonnet_gpu.py
+python3 ./allennlp_jsonnet_gpu.py
+
+echo allennlp train gpu/best_classifier.json -s gpu/best
+allennlp train gpu/best_classifier.json -s gpu/best
+
+echo diff gpu/test_$(cat gpu/BEST_TRIAL)/metrics.json gpu/best/metrics.json
+diff gpu/test_$(cat gpu/BEST_TRIAL)/metrics.json gpu/best/metrics.json
+
+echo python3 ./allennlp_jsonnet_cpu.py
+python3 ./allennlp_jsonnet_cpu.py
+
+echo allennlp train cpu/best_classifier.json -s cpu/best
+allennlp train cpu/best_classifier.json -s cpu/best
+
+echo diff cpu/test_$(cat cpu/BEST_TRIAL)/metrics.json cpu/best/metrics.json
+diff cpu/test_$(cat cpu/BEST_TRIAL)/metrics.json cpu/best/metrics.json
