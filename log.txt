@@ -11,72 +11,72 @@ diff ./classifier_gpu.jsonnet ./classifier_cpu.jsonnet
 python3 ./allennlp_jsonnet_gpu.py
 Number of finished trials:  3
 Best trial:
-  Value:  0.51372
+  Value:  0.5276
   Params: 
-    DROPOUT: 0.185745663497891
-    EMBEDDING_DIM: 25
-    MAX_FILTER_SIZE: 4
-    NUM_FILTERS: 18
-    HIDDEN_SIZE: 31
+    DROPOUT: 0.14994763539873335
+    EMBEDDING_DIM: 34
+    MAX_FILTER_SIZE: 5
+    NUM_FILTERS: 30
+    HIDDEN_SIZE: 17
 
 Created optimized AllenNLP config to `gpu/best_classifier.json`.
 allennlp train gpu/best_classifier.json -s gpu/best
 diff gpu/test_2/metrics.json gpu/best/metrics.json
 2,5c2,5
 <   "best_epoch": 3,
-<   "peak_cpu_memory_MB": 3848.228,
-<   "peak_gpu_0_memory_MB": 1234,
-<   "training_duration": "0:01:18.770117",
+<   "peak_cpu_memory_MB": 3848.912,
+<   "peak_gpu_0_memory_MB": 1290,
+<   "training_duration": "0:01:24.731210",
 ---
->   "best_epoch": 1,
->   "peak_cpu_memory_MB": 3808.64,
->   "peak_gpu_0_memory_MB": 1186,
->   "training_duration": "0:00:51.303862",
+>   "best_epoch": 0,
+>   "peak_cpu_memory_MB": 3813.304,
+>   "peak_gpu_0_memory_MB": 1232,
+>   "training_duration": "0:00:39.782975",
 7,16c7,16
 <   "training_epochs": 4,
 <   "epoch": 4,
-<   "training_accuracy": 0.511,
-<   "training_loss": 29.37306941729784,
-<   "training_cpu_memory_MB": 3848.228,
-<   "training_gpu_0_memory_MB": 1234,
-<   "validation_accuracy": 0.51004,
-<   "validation_loss": 11.353218630552291,
-<   "best_validation_accuracy": 0.51372,
-<   "best_validation_loss": 29.564967146483063
+<   "training_accuracy": 0.5334,
+<   "training_loss": 342.5166774940491,
+<   "training_cpu_memory_MB": 3848.912,
+<   "training_gpu_0_memory_MB": 1290,
+<   "validation_accuracy": 0.47688,
+<   "validation_loss": 268.2667902909544,
+<   "best_validation_accuracy": 0.5276,
+<   "best_validation_loss": 172.25895163874625
 ---
->   "training_epochs": 2,
->   "epoch": 2,
->   "training_accuracy": 0.5074,
->   "training_loss": 106.23504164880514,
->   "training_cpu_memory_MB": 3808.324,
->   "training_gpu_0_memory_MB": 1186,
->   "validation_accuracy": 0.50164,
->   "validation_loss": 17.337667718875036,
->   "best_validation_accuracy": 0.50376,
->   "best_validation_loss": 30.648082316533884
+>   "training_epochs": 1,
+>   "epoch": 1,
+>   "training_accuracy": 0.4982,
+>   "training_loss": 247.16284824752807,
+>   "training_cpu_memory_MB": 3812.604,
+>   "training_gpu_0_memory_MB": 1232,
+>   "validation_accuracy": 0.48396,
+>   "validation_loss": 193.87668090007782,
+>   "best_validation_accuracy": 0.50592,
+>   "best_validation_loss": 81.30481990303993
 python3 ./allennlp_jsonnet_cpu.py
 Number of finished trials:  3
 Best trial:
-  Value:  0.5156
+  Value:  0.51528
   Params: 
-    DROPOUT: 0.09998103395916497
-    EMBEDDING_DIM: 42
-    MAX_FILTER_SIZE: 6
-    NUM_FILTERS: 21
-    HIDDEN_SIZE: 21
+    DROPOUT: 0.044894865303400144
+    EMBEDDING_DIM: 44
+    MAX_FILTER_SIZE: 5
+    NUM_FILTERS: 30
+    HIDDEN_SIZE: 17
 
 Created optimized AllenNLP config to `cpu/best_classifier.json`.
 allennlp train cpu/best_classifier.json -s cpu/best
 diff cpu/test_1/metrics.json cpu/best/metrics.json
 3c3
-<   "peak_cpu_memory_MB": 3976.88,
+<   "peak_cpu_memory_MB": 3959.3,
 ---
->   "peak_cpu_memory_MB": 3637.096,
+>   "peak_cpu_memory_MB": 3674.68,
 5c5
-<   "training_duration": "0:03:30.779900",
+<   "training_duration": "0:04:09.422305",
 ---
->   "training_duration": "0:03:24.830091",
+>   "training_duration": "0:04:07.031251",
 11c11
-<   "training_cpu_memory_MB": 3976.88,
+<   "training_cpu_memory_MB": 3959.3,
 ---
->   "training_cpu_memory_MB": 3590.872,
+>   "training_cpu_memory_MB": 3674.68,

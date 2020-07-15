@@ -4,14 +4,14 @@ This repo is for investigating the problem of reproducing results.
 https://github.com/optuna/optuna/issues/1487
 
 
-#### Run experiment
+#### Run experiment on your environment
 
 ```
 python3 -m venv venv
 . ./venv/bin/activate
 
 pip install -r ./requirements.txt
-./run
+./run | tee log.new.txt
 ```
 
 
